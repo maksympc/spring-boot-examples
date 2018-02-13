@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.springtutorial</groupId>
-    <artifactId>springboot</artifactId>
+    <artifactId>springbootDemo</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <parent>
@@ -40,11 +40,15 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-freemarker</artifactId>
         </dependency>
+        <!-- mongodb driver, spring data mongodb-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-mongodb</artifactId>
+        </dependency>
     </dependencies>
 
     <build>
         <plugins>
-            <!-- плагин умеет запускать приложение, как сервис-->
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>

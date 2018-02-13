@@ -1,7 +1,11 @@
 package com.springtutorial.model;
 
-// should implement with Guava
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Document
 public class StackOverflowWebsite {
+    @Id
     private final String id;
     private final String iconImageUrl;
     private final String website;
