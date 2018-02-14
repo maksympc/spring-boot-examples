@@ -27,12 +27,13 @@ public class StackoverflowService {
                         "Server Fault is a question and answer site for system and network administrators. Join them; it only takes a minute."));
     }
 
-    @PostConstruct
-    public void init() {
-        if (repository.count() == 0) {
-            repository.save(items);
-        }
-    }
+// was used to initialize DB
+//    @PostConstruct
+//    public void init() {
+//        if (repository.count() == 0) {
+//            repository.save(items);
+//        }
+//    }
 
     public List<StackOverflowWebsite> findAll() {
         return repository.findAll();
