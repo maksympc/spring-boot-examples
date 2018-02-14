@@ -14,3 +14,5 @@ mvn clean install
 
 <b>*Step 4, run application</b>:
 java -jar target/springbootDemo-1.0-SNAPSHOT.jar
+
+Application is reacheble on: http://localhost:8090/stackoverflow.html
