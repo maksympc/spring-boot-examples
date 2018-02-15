@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body ng-app="springbootDemo">
+<div class="container" ng-controller="AppReCaptchaCtrl">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <h2 class="page-header">ReCaptcha demo. Login form</h2>
+
+            <form name="form" autocomplete="off" novalidate
+                  ng-submit="form.$valid && sendForm(auth)">
+                <div class="form-group">
+                    <label for="email">Email address:</label>
+                    <input type="email"
+                           class="form-control"
+                           id="email"
+                           placeholder="Enter email"
+                           name="email"
+                           required
+                           ng-model="auth.email">
+                </div>
+                <div class="form-group">
+                    <label for="pwd">Password:</label>
+                    <input type="password"
+                           class="form-control"
+                           id="pwd"
+                           placeholder="Enter password"
+                           name="pwd"
+                           required
+                           ng-model="auth.password">
+                </div>
+                <recaptcha sitekey="6LfajEYUAAAAADjbnEWfF1loXzbpivjXRpuN6XLh"
+                           ng-model="auth.recaptchaResponse"
+                           hl="ru">
+                </recaptcha>
+                <button type="submit" style="margin-top: 10px" class="btn btn-default" ng-disabled="form.$invalid">
+                    Submit
+                </button>
+            </form>
+
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="js/angular.min.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
+<script type="text/javascript" src="js/login.js"></script>
+</body>
+</html>

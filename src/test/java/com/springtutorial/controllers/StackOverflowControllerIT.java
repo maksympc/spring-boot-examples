@@ -1,4 +1,4 @@
-package com.springtutorial.web;
+package com.springtutorial.controllers;
 
 import com.google.common.collect.ImmutableList;
 import com.springtutorial.model.StackOverflowWebsite;
