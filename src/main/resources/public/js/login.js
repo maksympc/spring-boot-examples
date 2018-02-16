@@ -5,7 +5,7 @@ app.controller("AppReCaptchaCtrl", function ($scope, $http) {
     $scope.sendForm = function (auth) {
         $http({
             method: "POST",
-            url: "/register",
+            url: "http://localhost:8090/register",
             data: $.param(auth),
             headers: {"Content-Type": "application/x-www-form-urlencoded"}
         }).then(
