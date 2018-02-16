@@ -15,9 +15,9 @@ import java.util.List;
 import java.util.Properties;
 import java.util.stream.Stream;
 
-@Configuration
+//@Configuration
 public class Wro4jConfiguration {
-    @Bean
+    //  @Bean
     public FilterRegistrationBean webResourceOptimizer(Environment environment) {
         FilterRegistrationBean filterBean = new FilterRegistrationBean();
         filterBean.setFilter(newWroFilter(environment));
