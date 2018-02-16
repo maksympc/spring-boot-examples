@@ -1,0 +1,22 @@
+app:
+    allowedOrigins:
+        cors: http://localhost:8080,http://localhost:8090
+    reCaptcha:
+        apiUrl: https://www.google.com/recaptcha/api/siteverify
+        key: 6LfajEYUAAAAAHJfccCfH6NRgxyva7EghNlbog35
+
+server:
+    port: 8090
+
+spring:
+    data:
+        mongodb:
+            database: springbootDemo
+wro:
+    preProcessors: semicolonAppender,jsMin
+
+security:
+    basic:
+        enabled: true
+    ignored: "/readme.txt"
+    sessions: stateless
