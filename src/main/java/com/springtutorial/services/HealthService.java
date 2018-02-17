@@ -1,4 +1,4 @@
-package com.springtutorial.service;
+package com.springtutorial.services;
 
 import org.springframework.retry.annotation.Backoff;
 import org.springframework.retry.annotation.Recover;

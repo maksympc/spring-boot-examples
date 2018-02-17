@@ -2,7 +2,7 @@ package com.springtutorial.controllers;
 
 import com.springtutorial.model.ReCaptchaResponseDto;
 import com.springtutorial.model.RegisterDto;
-import com.springtutorial.service.ReCapthaApiClient;
+import com.springtutorial.services.ReCapthaApiClient;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

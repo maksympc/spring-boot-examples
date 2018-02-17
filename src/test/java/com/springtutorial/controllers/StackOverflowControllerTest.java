@@ -2,7 +2,7 @@ package com.springtutorial.controllers;
 
 import com.google.common.collect.ImmutableList;
 import com.springtutorial.model.StackOverflowWebsite;
-import com.springtutorial.service.StackoverflowService;
+import com.springtutorial.services.StackoverflowService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;

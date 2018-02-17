@@ -1,4 +1,4 @@
-package com.springtutorial.service;
+package com.springtutorial.services;
 
 import com.google.common.collect.ImmutableList;
 import com.springtutorial.model.SiteDto;

@@ -14,9 +14,3 @@ spring:
             database: springbootDemo
 wro:
     preProcessors: semicolonAppender,jsMin
-
-security:
-    basic:
-        enabled: true
-    ignored: "/readme.txt"
-    sessions: stateless

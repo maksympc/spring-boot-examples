@@ -1,4 +1,4 @@
-package com.springtutorial.service;
+package com.springtutorial.services;
 
 import com.springtutorial.model.ReCaptchaResponseDto;
 import lombok.NonNull;
