@@ -1,6 +1,9 @@
 package com.springtutorial.security;
 
 
+import com.springtutorial.filters.AdminAuthFilter;
+import com.springtutorial.filters.StatelessAuthFilter;
+import com.springtutorial.services.TokenAuthService;
 import com.springtutorial.services.UserService;
 import lombok.NoArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,14 +15,22 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
+
+    @Autowired
+    private UserService userService;
+    @Autowired
+    private TokenAuthService tokenAuthService;
+
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http
+                .addFilterBefore(new StatelessAuthFilter(tokenAuthService), UsernamePasswordAuthenticationFilter.class)
                 .authorizeRequests()
                 .antMatchers("/readme.txt", "/css/*").permitAll()
                 .anyRequest().authenticated()
@@ -28,9 +39,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
                 .logout().logoutRequestMatcher(new AntPathRequestMatcher("/logout")).permitAll();
     }
-
-    @Autowired
-    private UserService userService;
 
     @Bean
     public PasswordEncoder bcryPasswordEncoder() {
